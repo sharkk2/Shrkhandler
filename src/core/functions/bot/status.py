@@ -1,10 +1,6 @@
 import random
-
 import discord
-
 import psutil
-
-print()
 
 async def change_status(bot):
     import config
@@ -47,4 +43,5 @@ async def change_status(bot):
         
     await bot.change_presence(status=status, activity=activity)
     if config.maintainance:
+
       logger.info(f"Status changed to {status_data['text']}")   
