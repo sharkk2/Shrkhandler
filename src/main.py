@@ -6,7 +6,7 @@
 
 
 import discord
-from datetime import datetime
+import time
 from discord.ext import commands
 import asyncio
 import config
@@ -30,7 +30,7 @@ async def on_ready():
        logger.warning("Maintainance mode is on!")
      logger.info("Loading...")
      await bot.change_presence(status=discord.Status.dnd, activity=discord.Activity(type=discord.ActivityType.playing, name=f"Loading.."))
-     bot.start_time = datetime.utcnow()
+     bot.start_time = time.time()
      
      from core.handlers import commands, events, task_handler      
      from core.functions.bot.error import error
@@ -93,3 +93,4 @@ async def main():
 if __name__ == "__main__":  
   asyncio.run(main())              
   
+
